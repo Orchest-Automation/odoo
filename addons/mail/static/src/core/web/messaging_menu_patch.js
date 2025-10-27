@@ -59,7 +59,7 @@ patch(MessagingMenu.prototype, {
         });
     },
     get canPromptToInstall() {
-        return this.pwa.canPromptToInstall;
+        return false;
     },
     get hasPreviews() {
         return (
