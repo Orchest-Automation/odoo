@@ -94,6 +94,12 @@ except ImportError:
     freezegun = None
 
 _logger = logging.getLogger(__name__)
+
+# queue_job >= 18.0 (May 2026) registers patch paths here. The checker that
+# consumes the map arrived in 18.0 after this pin (de056cc784a3). An empty
+# map is enough for the import; the warning checker stays on the upstream tip.
+SETATTR_SOURCES = {}
+
 if config['test_enable'] or config['test_file']:
     _logger.info("Importing test framework", stack_info=_logger.isEnabledFor(logging.DEBUG))
 else:
